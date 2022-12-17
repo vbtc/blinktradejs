@@ -288,7 +288,7 @@ blinktrade.subscribeMarketData(["BTCBRL"]).then((orderbook) => {
         "MDEntryDate": "2018-02-03",
         "UserID": 90800000,
         "OrderID": 1459000000000,
-        "MDEntryType": "0",
+        "MDEntryType": "0"
       }],
       "asks": [{
         "MDEntryPositionNo": 1,
@@ -299,7 +299,7 @@ blinktrade.subscribeMarketData(["BTCBRL"]).then((orderbook) => {
         "MDEntryDate": "2018-02-03",
         "UserID": 90800000,
         "OrderID": 1459000000000,
-        "MDEntryType": "1",
+        "MDEntryType": "1"
       }]
     }
   }
@@ -345,7 +345,7 @@ The `blinktrade.orderbook` is a object like this
       "MDEntryDate": "2018-02-03",
       "UserID": 90800000,
       "OrderID": 1459000000000,
-      "MDEntryType": "0",
+      "MDEntryType": "0"
     }],
     "asks": [{
       "MDEntryPositionNo": 1,
@@ -356,7 +356,7 @@ The `blinktrade.orderbook` is a object like this
       "MDEntryDate": "2018-02-03",
       "UserID": 90800000,
       "OrderID": 1459000000000,
-      "MDEntryType": "1",
+      "MDEntryType": "1"
     }]
   }
 }
@@ -684,7 +684,7 @@ blinktrade.confirmWithdraw({
         "Instant": "NO",
         "AccountBranch": "111",
         "AccountNumber": "4444-5",
-        "AccountType": "corrente", 
+        "AccountType": "corrente",
         "CPF_CNPJ": "00000000000"
     },
     "Method": "bradesco",
@@ -848,7 +848,7 @@ const blinktrade = new BlinkTradeWS({
 blinktrade.connect().on('OPEN', () => {
   console.log('connected');
   blinktrade.login({
-    username: '<API_KEY>'
+    username: '<API_KEY>',
     password: '<API_PASSWORD>'
   }).then(() => {
     // Manually disconnect WebSocket connection
@@ -1021,12 +1021,12 @@ Symbols Available:
 
 #### Arguments
 
-| Name        | Type                   | Description                                          |
-|-------------|------------------------|------------------------------------------------------|
-| options     | Object | Array<string> | Object with market data options or the Array of instruments to subscribe e.g.: ['BTCBRL', 'BTCVND']
-| columns     | Array<string>          | Optional; Array of columns that you want to received, note that you will also receive the same columns on incremental updates e.g.: ['MDEntryType', 'MDEntryPx', 'MDEntrySize']
-| entryTypes  | Array<0 | 1 | 2>       | Optional; Array on which entry type you want to subscribe to. 0 = Bids, 1 = Asks, 2 = Trades
-| marketDepth | number                 | Optional; Number of orders to be returned from orderbook e.g.: 0 = Full Book, 1 = Top of book, N > 1 = Number of orders to be returned
+| Name        | Type          | Description                                                                                                                                                                     |
+|-------------|---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| options     | Object        | Array<string>                                                                                                                                                                   | Object with market data options or the Array of instruments to subscribe e.g.: ['BTCBRL', 'BTCVND']
+| columns     | Array<string> | Optional; Array of columns that you want to received, note that you will also receive the same columns on incremental updates e.g.: ['MDEntryType', 'MDEntryPx', 'MDEntrySize'] |
+| entryTypes  | Array<0       | 1                                                                                                                                                                               | 2>       | Optional; Array on which entry type you want to subscribe to. 0 = Bids, 1 = Asks, 2 = Trades
+| marketDepth | number        | Optional; Number of orders to be returned from orderbook e.g.: 0 = Full Book, 1 = Top of book, N > 1 = Number of orders to be returned                                          |
 
 #### Events
 
@@ -1132,13 +1132,12 @@ These methods bellow are both availabe under REST and WebSocket API.
 
 #### Arguments
 
-| Name     | Type   | Description/Value
-|----------|--------|------------------
-| page     | number | **Optional**; defaults to 0
-| pageSize | number | **Optional**; defaults to 20
-| brokerID | number | **Optional**; [\<BROKER_ID\>](#brokers)
-| currency | string | **Optional**; Currency code. (.e.g: BTC)
-
+| Name     | Type   | Description/Value                        |
+|----------|--------|------------------------------------------|
+| page     | number | **Optional**; defaults to 0              |
+| pageSize | number | **Optional**; defaults to 20             |
+| brokerID | number | **Optional**; [\<BROKER_ID\>](#brokers)  |
+| currency | string | **Optional**; Currency code. (.e.g: BTC) |
 
 ### requestWithdrawList [websocket, rest]
 
